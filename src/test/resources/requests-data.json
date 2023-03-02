@@ -1,0 +1,6 @@
+{
+  "SELECT_MIN_WORKING_TESTS_TIME": "SELECT project.name AS 'PROJECT', t.name AS 'TEST', MIN_WORKING_TIME FROM (SELECT test.project_id, test.name, min(test.end_time - test.start_time) AS 'MIN_WORKING_TIME' FROM test GROUP BY test.name)t JOIN project ON project.id = t.project_id ORDER BY PROJECT, TEST",
+  "SELECT_UNIQUE_TESTS_COUNT_BY_PROJECT": "SELECT project.name AS 'PROJECT', COUNT(test.name) AS 'TEST_COUNT' FROM test LEFT JOIN project ON project.id = test.project_id GROUP BY project_id ORDER BY PROJECT",
+  "SELECT_TESTS_EXECUTED_AFTER_SPECIFIC_DATE": "SELECT project.name AS 'PROJECT', test.name AS 'TEST', test.start_time AS 'DATE' FROM test LEFT JOIN project ON test.project_id = project.id WHERE start_time > ? ORDER BY PROJECT, TEST, DATE",
+  "SELECT_TESTS_EXECUTED_WITH_SPECIFIC_BROWSERS": "SELECT COUNT(*) AS 'BROWSERS' FROM test WHERE browser = "
+}

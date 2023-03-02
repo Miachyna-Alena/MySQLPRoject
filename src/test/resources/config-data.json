@@ -1,0 +1,4 @@
+{
+  "DB_URL": "jdbc:mysql://localhost:3306/union_reporting",
+  "TEST_DATA_FILE_SOURCE": "src/test/resources/test-data.json"
+}
